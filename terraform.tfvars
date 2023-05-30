@@ -1,14 +1,14 @@
 oci  = {
-  tenancy_ocid           = "ocid1.tenancy.oc1..aaaaaaaacg2kx2vh5y62jvq7bqpgmt7komml6rshkw4hlidt5y2su5gacyja"
-  user_ocid              = "ocid1.user.oc1..aaaaaaaa4ymbe2oswj4xizxlrftafomsg37a2ojqjy5py2zzrsi5dzud5zxa"
+  tenancy_ocid           = "xxxx"
+  user_ocid              = "xxxx"
   private_key_path       = "/home/opc/.oci/oci_api_key.pem"
-  fingerprint            = "73:21:c8:c6:75:2c:93:64:3a:09:5f:36:3f:76:19:7a"
+  fingerprint            = "xxxx"
   region                 = "eu-frankfurt-1"
 }
 
-ad                       = "VXpT:EU-FRANKFURT-1-AD-2"
-compartment_ocid         = "ocid1.compartment.oc1..aaaaaaaa6q6b7234r6urb67ztkt3osjy7dzod5svjd3mlgulacpklcnwtrda"
-ssh_key                  = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCf5pkef2csDdtiZPuiz9KmwxJcXvkKrkEFEQGI44phzDxjwrtXmvxBFqly8zgUdF7ECtAu+hl53DAwjJLuZd2UpWpC4H5WSD1QluDoP6DG7cPYT3aczrrldAphyiphjl7Uz26Yb16vov9ul+/zdCokWPPBd8IVeGytrRdDf///dpyXw7jTv0I9ukis5Y6MzapxHKZKj54SH/SFZp9clcG2o4xcK+FAMlboWif3zYn8fB0Ca98ObqlhLI+ME8QAKrshDUXqYyjVmARXNz7IHhiMO5sALgjpOPM8nV3byLz+pDH1Nzl2anrz1bN/Rx0w5LFk1wbRiTo1Mae1imKWlcZUay6ts686ubYDG5HupUBW/va5cmNnnSnxy+U3VXllbQj9vWDbfi2Tw17I/4HzI2qNtaDpLzpiKHxIWuWqM35GiRWmwDZwjxM0a+RUFGvvqtLiuIUGC7UGOJ2IjTV0Ao22n3alZF5E4h6sPy/9Y87pUDFoy6pcVePDevybBAnEaNU= opc@TMIYASHI-7420"
+ad                       = "xxxx"
+compartment_ocid         = "xxxx"
+ssh_key                  = "xxxx"
 
 vcn_params               = {
   display_name           = "vcn"
