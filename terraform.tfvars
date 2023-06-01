@@ -1,9 +1,9 @@
 oci  = {
   tenancy_ocid           = "xxxx"
   user_ocid              = "xxxx"
-  private_key_path       = "/home/opc/.oci/oci_api_key.pem"
+  private_key_path       = "xxxx"
   fingerprint            = "xxxx"
-  region                 = "eu-frankfurt-1"
+  region                 = "xxxx"
 }
 
 ad                       = "xxxx"
@@ -127,15 +127,19 @@ inst_params_bast         = {
 
 cn_params                = {
   display_name           = "x9-ol8"
-  shape                  = "BM.Optimized3.36"
+#  shape                  = "BM.Optimized3.36"
+#  shape                  = "BM.GPU4.8"
   node_count             = 2
 # Use HPC image Oracle Linux 7.9 for instances connected to Cluster Network
 #  image                  = "ocid1.image.oc1..aaaaaaaayouelanobgkbsb3zanxtu6cr4bst62wco2xs5mzg3it7fp2iuvbq"
 # Use HPC image Oracle Linux 8.6 for instances connected to Cluster Network
-  image                  = "ocid1.image.oc1..aaaaaaaazgofwgysyz5i5bupwhjmolgf44b7vlwyqxy7pmcrpbufpmvef6da"
+#  image                  = "ocid1.image.oc1..aaaaaaaazgofwgysyz5i5bupwhjmolgf44b7vlwyqxy7pmcrpbufpmvef6da"
 # Use GPU HPC image Oracle Linux 7.9 for instances connected to Cluster Network
 #  image                  = "ocid1.image.oc1..aaaaaaaalro3vf5xh34zvg42i3j5c4kp6rx4ndoeq6c5v5zzotl5gwjrnxra"
 # Grow / filesystem after provisioning by /usr/libexec/oci-growfs command if more than 50
   boot_vol_size          = 100
-  cloud-config           = "cloud-init_cnhpc.cfg"
+# cloud-config file name for HPC cluster
+#  cloud-config           = "cloud-init_cnhpc.cfg"
+# cloud-config file name for GPU cluster
+#  cloud-config           = "cloud-init_cngpu.cfg"
 }
