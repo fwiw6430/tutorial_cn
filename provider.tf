@@ -1,7 +1,7 @@
-provider "oci" {
-  tenancy_ocid     = var.oci.tenancy_ocid
-  user_ocid        = var.oci.user_ocid
-  private_key_path = var.oci.private_key_path
-  fingerprint      = var.oci.fingerprint
-  region           = var.oci.region
-}
+#provider "oci" {
+#  tenancy_ocid     = "xxxx"
+#  user_ocid        = "xxxx"
+#  private_key_path = "xxxx"
+#  fingerprint      = "xxxx"
+#  region           = "ap-osaka-1"
+#}

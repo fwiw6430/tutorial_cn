@@ -1,14 +1,18 @@
-oci  = {
-  tenancy_ocid           = "xxxx"
-  user_ocid              = "xxxx"
-  private_key_path       = "xxxx"
-  fingerprint            = "xxxx"
-  region                 = "xxxx"
-}
-
-ad                       = "xxxx"
-compartment_ocid         = "xxxx"
-ssh_key                  = "xxxx"
+#sc_compartment_ocid      = "xxxx"
+#sc_ad                    = "xxxx"
+#sc_ssh_key               = "xxxx"
+#sc_cn_display_name       = "xxxx"
+#sc_cn_shape              = "BM.Optimized3.36"
+#sc_cn_shape              = "BM.GPU4.8"
+#sc_cn_node_count         = 2
+# Use HPC image Oracle Linux 7.9 for instances connected to Cluster Network
+#sc_cn_image              = "ocid1.image.oc1..aaaaaaaayouelanobgkbsb3zanxtu6cr4bst62wco2xs5mzg3it7fp2iuvbq"
+# Use HPC image Oracle Linux 8.6 for instances connected to Cluster Network
+#sc_cn_image              = "ocid1.image.oc1..aaaaaaaazgofwgysyz5i5bupwhjmolgf44b7vlwyqxy7pmcrpbufpmvef6da"
+# Use GPU HPC image Oracle Linux 7.9 for instances connected to Cluster Network
+#sc_cn_image              = "ocid1.image.oc1..aaaaaaaalro3vf5xh34zvg42i3j5c4kp6rx4ndoeq6c5v5zzotl5gwjrnxra"
+#sc_cn_boot_vol_size      = 100
+#sc_cn_cloud_config       = "cloud-init.cfg encoded in base64"
 
 vcn_params               = {
   display_name           = "vcn"
@@ -122,24 +126,8 @@ user_name                = "opc"
 inst_params_bast         = {
   display_name           = "bastion"
   shape                  = "VM.Optimized3.Flex"
+  ocpus                  = 1
+  memory_in_gbs          = 16
+  boot_vol_size          = 50
   image                  = "^Oracle-Linux-8.*"
-}
-
-cn_params                = {
-  display_name           = "x9-ol8"
-#  shape                  = "BM.Optimized3.36"
-#  shape                  = "BM.GPU4.8"
-  node_count             = 2
-# Use HPC image Oracle Linux 7.9 for instances connected to Cluster Network
-#  image                  = "ocid1.image.oc1..aaaaaaaayouelanobgkbsb3zanxtu6cr4bst62wco2xs5mzg3it7fp2iuvbq"
-# Use HPC image Oracle Linux 8.6 for instances connected to Cluster Network
-#  image                  = "ocid1.image.oc1..aaaaaaaazgofwgysyz5i5bupwhjmolgf44b7vlwyqxy7pmcrpbufpmvef6da"
-# Use GPU HPC image Oracle Linux 7.9 for instances connected to Cluster Network
-#  image                  = "ocid1.image.oc1..aaaaaaaalro3vf5xh34zvg42i3j5c4kp6rx4ndoeq6c5v5zzotl5gwjrnxra"
-# Grow / filesystem after provisioning by /usr/libexec/oci-growfs command if more than 50
-  boot_vol_size          = 100
-# cloud-config file name for HPC cluster
-#  cloud-config           = "cloud-init_cnhpc.cfg"
-# cloud-config file name for GPU cluster
-#  cloud-config           = "cloud-init_cngpu.cfg"
 }

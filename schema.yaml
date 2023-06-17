@@ -1,0 +1,103 @@
+---
+title: "HPC/GPU cluster Terraform scripts"
+description: "Terraform scripts deploying HPC/GPU cluster on OCI ver. 1.0"
+schemaVersion: 1.0.0
+version: "2023061301"
+informationalText: "Terraform scripts deploying HPC/GPU cluster on OCI ver. 1.0"
+
+#source:
+#  type: marketplace
+#  reference: 67628143
+locale: "en"
+
+outputs:
+  bastion:
+    title: "Bastion Instance Public IP"
+    type: copyableString
+    visible: true
+
+variableGroups:
+  - title: "General options"
+    variables:
+      - ${sc_compartment_ocid}
+      - ${sc_ad}
+      - ${sc_ssh_key}
+  - title: "Compute/GPU node options"
+    variables:
+      - ${sc_cn_display_name}
+      - ${sc_cn_shape}
+      - ${sc_cn_node_count}
+      - ${sc_cn_image}
+      - ${sc_cn_boot_vol_size}
+      - ${sc_cn_cloud_config}
+  - title: "Hidden"
+    variables:
+      - ${inst_params_bast}
+      - ${igw_display_name}
+      - ${ngw_display_name}
+      - ${rt_params}
+      - ${sl_params}
+      - ${vcn_params}
+      - ${subnet_params}
+      - ${user_name}
+    visible: false
+
+variables:
+  sc_compartment_ocid:
+    type: oci:identity:compartment:id
+    title: "Compartment"
+    description: "Compartment where resources reside"
+    default: ${compartment_ocid}
+    required: true
+  sc_ad:
+    type: oci:identity:availabilitydomain:name
+    title: "Availability Domain"
+    description: "Availability Domain where OCI resources reside"
+    visible: complexExpression
+    dependsOn:
+      compartmentId: ${sc_compartment_ocid}
+    required: true
+  sc_ssh_key:
+    type: oci:core:ssh:publickey
+    title: "SSH public key"
+    description: "SSH public key to login bastion"
+    required: true
+  sc_cn_display_name:
+    title: "Cluster display name postfix"
+    description: "Cluster display name postfix"
+    required: true
+  sc_cn_shape:
+    type: enum
+    title: "Compute/GPU node shape"
+    description: "Compute/GPU node shape"
+    enum:
+      - "BM.HPC2.36"
+      - "BM.Optimized3.36"
+      - "BM.GPU4.8"
+      - "BM.GPU.A100-v2.8"
+    default: "BM.Optimized3.36"
+    required: true
+  sc_cn_node_count:
+    type: integer
+    title: "Compute/GPU node count"
+    description: "Compute/GPU node count"
+    minimum: 2
+    default: 2
+    required: true
+  sc_cn_image:
+    title: "Compute/GPU node image OCID"
+    description: "Compute/GPU node image OCID"
+    required: true
+  sc_cn_boot_vol_size:
+    type: integer
+    title: "Compute/GPU node boot volume size"
+    description: "Compute/GPU node boot volume size in GB"
+    required: true
+    minimum: 50
+    default: 50
+# "-" in variable name causes issue to handle its value in Terraform scripts
+  sc_cn_cloud_config:
+    type: file
+    title: "cloud-config"
+    description: "Compute/GPU node cloud-config file"
+    required: true
