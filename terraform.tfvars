@@ -6,9 +6,9 @@
 #sc_cn_shape              = "BM.GPU4.8"
 #sc_cn_node_count         = 2
 # Use HPC image Oracle Linux 7.9 for instances connected to Cluster Network
-#sc_cn_image              = "ocid1.image.oc1..aaaaaaaayouelanobgkbsb3zanxtu6cr4bst62wco2xs5mzg3it7fp2iuvbq"
-# Use HPC image Oracle Linux 8.6 for instances connected to Cluster Network
-#sc_cn_image              = "ocid1.image.oc1..aaaaaaaazgofwgysyz5i5bupwhjmolgf44b7vlwyqxy7pmcrpbufpmvef6da"
+#sc_cn_image              = "ocid1.image.oc1..aaaaaaaa2ukz3tuyn2st5p4pnxsqx4zzg6fi25d7ns2rvywqaalgcer2tepa"
+# Use HPC image Oracle Linux 8.7 for instances connected to Cluster Network
+#sc_cn_image              = "ocid1.image.oc1..aaaaaaaaceagnur6krcfous5gxp2iwkv2teiqijbntbpwc4b3alxkzyqi25a"
 # Use GPU HPC image Oracle Linux 7.9 for instances connected to Cluster Network
 #sc_cn_image              = "ocid1.image.oc1..aaaaaaaalro3vf5xh34zvg42i3j5c4kp6rx4ndoeq6c5v5zzotl5gwjrnxra"
 #sc_cn_boot_vol_size      = 100
