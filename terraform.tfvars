@@ -4,6 +4,7 @@
 #sc_cn_display_name       = "xxxx"
 #sc_cn_shape              = "BM.Optimized3.36"
 #sc_cn_shape              = "BM.GPU4.8"
+#sc_cn_shape              = "BM.GPU.A100-v2.8"
 #sc_cn_node_count         = 2
 # Use HPC image Oracle Linux 7.9 for instances connected to Cluster Network
 #sc_cn_image              = "ocid1.image.oc1..aaaaaaaa2ukz3tuyn2st5p4pnxsqx4zzg6fi25d7ns2rvywqaalgcer2tepa"
@@ -13,6 +14,10 @@
 #sc_cn_image              = "ocid1.image.oc1..aaaaaaaalro3vf5xh34zvg42i3j5c4kp6rx4ndoeq6c5v5zzotl5gwjrnxra"
 #sc_cn_boot_vol_size      = 100
 #sc_cn_cloud_config       = "cloud-init.cfg encoded in base64"
+#sc_cn_nps_x9             = "NPS2"
+#sc_cn_nps_gpu40          = "NPS4"
+#sc_cn_nps_gpu80          = "NPS4"
+#sc_cn_smt                = false
 
 vcn_params               = {
   display_name           = "vcn"

@@ -30,6 +30,10 @@ variableGroups:
       - ${sc_cn_image}
       - ${sc_cn_boot_vol_size}
       - ${sc_cn_cloud_config}
+      - ${sc_cn_nps_x9}
+      - ${sc_cn_nps_gpu40}
+      - ${sc_cn_nps_gpu80}
+      - ${sc_cn_smt}
   - title: "Hidden"
     variables:
       - ${inst_params_bast}
@@ -40,13 +44,15 @@ variableGroups:
       - ${vcn_params}
       - ${subnet_params}
       - ${user_name}
+      - ${sc_cn_platformtype}
+      - ${sc_cn_nps}
     visible: false
 
 variables:
   sc_compartment_ocid:
     type: oci:identity:compartment:id
     title: "Compartment"
-    description: "Compartment where resources reside"
+    description: "Compartment where OCI resources reside"
     default: ${compartment_ocid}
     required: true
   sc_ad:
@@ -60,18 +66,17 @@ variables:
   sc_ssh_key:
     type: oci:core:ssh:publickey
     title: "SSH public key"
-    description: "SSH public key to login bastion"
+    description: "SSH public key to login to Bastion"
     required: true
   sc_cn_display_name:
-    title: "Cluster display name postfix"
-    description: "Cluster display name postfix"
+    title: "Display name postfix"
+    description: "Compute/GPU node display name postfix ex) If x9-ol87, Compute/GPU node hostname becomes inst-xxxxx-x9-ol87"
     required: true
   sc_cn_shape:
     type: enum
-    title: "Compute/GPU node shape"
+    title: "Shape"
     description: "Compute/GPU node shape"
     enum:
-      - "BM.HPC2.36"
       - "BM.Optimized3.36"
       - "BM.GPU4.8"
       - "BM.GPU.A100-v2.8"
@@ -79,18 +84,18 @@ variables:
     required: true
   sc_cn_node_count:
     type: integer
-    title: "Compute/GPU node count"
+    title: "Node count"
     description: "Compute/GPU node count"
     minimum: 2
     default: 2
     required: true
   sc_cn_image:
-    title: "Compute/GPU node image OCID"
+    title: "Image OCID"
     description: "Compute/GPU node image OCID"
     required: true
   sc_cn_boot_vol_size:
     type: integer
-    title: "Compute/GPU node boot volume size"
+    title: "Boot volume size"
     description: "Compute/GPU node boot volume size in GB"
     required: true
     minimum: 50
@@ -101,3 +106,57 @@ variables:
     title: "cloud-config"
     description: "Compute/GPU node cloud-config file"
     required: true
+  sc_cn_nps_x9:
+    type: enum
+    title: "NPS for BM.Optimized3.36"
+    description: "Compute/GPU node NPS (NUMA nodes Per Socket) setting in BIOS for BM.Optimized3.36"
+    enum:
+      - "NPS1"
+      - "NPS2"
+    default: "NPS1"
+    required: true
+    visible:
+      and: 
+        - or:  
+          - eq:
+            - ${sc_cn_shape}
+            - "BM.Optimized3.36"
+  sc_cn_nps_gpu40:
+    type: enum
+    title: "NPS for BM.GPU4.8"
+    description: "Compute/GPU node NPS (NUMA nodes Per Socket) setting in BIOS for BM.GPU4.8"
+    enum:
+      - "NPS0"
+      - "NPS1"
+      - "NPS2"
+      - "NPS4"
+    default: "NPS4"
+    required: true
+    visible:
+      and: 
+        - or:  
+          - eq:
+            - ${sc_cn_shape}
+            - "BM.GPU4.8"
+  sc_cn_nps_gpu80:
+    type: enum
+    title: "NPS for BM.GPU.A100-v2.8"
+    description: "Compute/GPU node NPS (NUMA nodes Per Socket) setting in BIOS for BM.GPU.A100-v2.8"
+    enum:
+      - "NPS0"
+      - "NPS1"
+      - "NPS2"
+      - "NPS4"
+    default: "NPS4"
+    required: true
+    visible:
+      and: 
+        - or:  
+          - eq:
+            - ${sc_cn_shape}
+            - "BM.GPU.A100-v2.8"
+  sc_cn_smt:
+    type: boolean
+    title: "SMT"
+    description: "Compute/GPU node SMT (Simultanious Multi Threading) enabled in BIOS"
+    default: true

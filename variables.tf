@@ -59,7 +59,7 @@ variable "rt_params" {
 }
 variable "user_name" { 
   description          = "User name to be used to access instances via SSH"
-  type                 = string 
+  type                 = string
 } 
 variable "inst_params_bast" {
   description          = "Instance Parameters for bastion"
@@ -81,11 +81,11 @@ variable "sc_ssh_key" {
 }
 variable "sc_cn_display_name" { 
   description          = "Cluster display name postfix"
-  type                 = string 
+  type                 = string
 }
 variable "sc_cn_shape" { 
   description          = "Compute/GPU node shape"
-  type                 = string 
+  type                 = string
 }
 variable "sc_cn_node_count" { 
   description          = "Compute/GPU node count"
@@ -101,6 +101,26 @@ variable "sc_cn_boot_vol_size" {
 }
 # "-" in variable name causes issue to handle its value in Terraform scripts
 variable "sc_cn_cloud_config" {
-  description          = "File name for Compute/GPU node cloud-config"
-  type                 = string 
+  description          = "Compute/GPU node cloud-config file"
+  type                 = string
+}
+variable "sc_cn_nps_x9" {
+  description          = "Compute/GPU node NPS (NUMA nodes Per Socket) for BM.Optimized3.36"
+  type                 = string
+  default              = "NPS1"
+}
+variable "sc_cn_nps_gpu40" {
+  description          = "Compute/GPU node NPS (NUMA nodes Per Socket) for BM.GPU4.8"
+  type                 = string
+  default              = "NPS4"
+}
+variable "sc_cn_nps_gpu80" {
+  description          = "Compute/GPU node NPS (NUMA nodes Per Socket) for BM.GPU.A100-v2.8"
+  type                 = string
+  default              = "NPS4"
+}
+variable "sc_cn_smt" {
+  description          = "Compute/GPU node SMT (Simultanious Multi Threading) enabled in BIOS"
+  type                 = bool
+  default              = true
 }
