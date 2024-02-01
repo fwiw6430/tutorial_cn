@@ -10,7 +10,8 @@ resource "oci_core_instance_configuration" "cn_config" {
        compartment_id           = var.sc_compartment_ocid
       metadata                  = { 
         ssh_authorized_keys     = "${tls_private_key.ssh.public_key_openssh}"
-        user_data               = "${base64encode(file("./user_data/${var.sc_cn_cloud_config}"))}"
+#        user_data               = "${base64encode(file("./user_data/${var.sc_cn_cloud_config}"))}"
+        user_data               = var.sc_cn_cloud_config
       }
       shape                     = var.sc_cn_shape
       source_details {
