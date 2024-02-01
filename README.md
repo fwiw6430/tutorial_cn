@@ -1,3 +1,3 @@
-OCI HPC/GPU cluster Terraform scripts
-See following page about usage;
+OCI HPC/GPU cluster Terraform scripts<br>
+See following page about usage;<br>
 https://oracle-japan.github.io/ocitutorials/hpc/spinup-hpc-cluster-withterraform/
