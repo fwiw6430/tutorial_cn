@@ -1,14 +1,15 @@
 ---
 title: "HPC/GPU cluster Terraform scripts"
-description: "Terraform scripts deploying HPC/GPU cluster on OCI ver. 3.0"
+description: "Terraform scripts deploying HPC/GPU cluster on OCI ver. 4.0"
 schemaVersion: 1.0.0
 version: "2023061301"
-informationalText: "Terraform scripts deploying HPC/GPU cluster on OCI ver. 3.0"
+informationalText: "Terraform scripts deploying HPC/GPU cluster on OCI ver. 4.0"
 
 # Code history
 # 1.0: May 30th 2023: New release
 # 2.0: Jun 17th 2023: Support resource manager stack
 # 3.0: Aug 21st 2023: Support SMT and NPT BIOS settings
+# 4.0: Feb 1st  2024: Change CN configuration method from individual RPMs to OCA
 
 #source:
 #  type: marketplace
