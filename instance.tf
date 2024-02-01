@@ -1,15 +1,3 @@
-data "oci_core_images" "bastion" {
-  compartment_id            = var.sc_compartment_ocid
-  shape                     = var.inst_params_bast.shape
-  sort_by                   = "TIMECREATED"
-  sort_order                = "DESC"
-  filter {
-    name                    = "display_name"
-    values                  = [var.inst_params_bast.image]
-    regex                   = true
-  }
-}
-
 resource "tls_private_key" "ssh" {
   algorithm                 = "RSA"
   rsa_bits                  = "4096"
@@ -29,7 +17,7 @@ resource "oci_core_instance" "bastion" {
     assign_public_ip        = true
   }
   source_details {
-    source_id               = data.oci_core_images.bastion.images[0].id
+    source_id               = var.sc_cn_image
     source_type             = "image"
     boot_volume_size_in_gbs = var.inst_params_bast.boot_vol_size
   }
