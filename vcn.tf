@@ -1,24 +1,24 @@
 resource "oci_core_virtual_network" "vcn" {
-  compartment_id             = var.sc_compartment_ocid
+  compartment_id             = var.compartment_ocid
   display_name               = var.vcn_params.display_name
   cidr_block                 = var.vcn_params.vcn_cidr
   dns_label                  = var.vcn_params.dns_label
 }
 
 resource "oci_core_internet_gateway" "igw" {
-  compartment_id             = var.sc_compartment_ocid
+  compartment_id             = var.compartment_ocid
   vcn_id                     = oci_core_virtual_network.vcn.id
   display_name               = var.igw_display_name
 }
 
 resource "oci_core_nat_gateway" "ngw" {
-  compartment_id             = var.sc_compartment_ocid
+  compartment_id             = var.compartment_ocid
   vcn_id                     = oci_core_virtual_network.vcn.id
   display_name               = var.ngw_display_name
 }
 
 resource "oci_core_subnet" "sub" {
-  compartment_id             = var.sc_compartment_ocid
+  compartment_id             = var.compartment_ocid
   vcn_id                     = oci_core_virtual_network.vcn.id
   for_each                   = var.subnet_params
   display_name               = each.value.display_name
@@ -30,7 +30,7 @@ resource "oci_core_subnet" "sub" {
 }
 
 resource "oci_core_security_list" "sl" {
-  compartment_id             = var.sc_compartment_ocid
+  compartment_id             = var.compartment_ocid
   vcn_id                     = oci_core_virtual_network.vcn.id
   for_each                   = var.sl_params
   display_name               = each.value.display_name
@@ -71,7 +71,7 @@ resource "oci_core_security_list" "sl" {
 }
 
 resource "oci_core_route_table" "rt" {
-  compartment_id             = var.sc_compartment_ocid
+  compartment_id             = var.compartment_ocid
   vcn_id                     = oci_core_virtual_network.vcn.id
   for_each                   = var.rt_params
   display_name               = each.value.display_name

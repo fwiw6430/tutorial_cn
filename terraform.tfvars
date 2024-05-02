@@ -1,32 +1,32 @@
-#sc_compartment_ocid      = "xxxx"
-#sc_ad                    = "xxxx"
-#sc_ssh_key               = "xxxx"
-#sc_cn_display_name       = "xxxx"
-#sc_cn_shape              = "BM.Optimized3.36"
-#sc_cn_shape              = "BM.GPU4.8"
-#sc_cn_shape              = "BM.GPU.A100-v2.8"
-#sc_cn_node_count         = 2
+#compartment_ocid      = "xxxx"
+#ad                    = "xxxx"
+#ssh_key               = "xxxx"
+comp_shape              = "BM.Optimized3.36"
+#comp_shape              = "BM.GPU4.8"
+#comp_shape              = "BM.GPU.A100-v2.8"
 # Use HPC image Oracle Linux 7.9 with OCA for instances connected to Cluster Network
-#sc_cn_image              = "ocid1.image.oc1..aaaaaaaano7btfbh7cvbaygka4fehemtsal7f7l2qx6oqvbwua6xnszdvaha"
+#comp_image              = "ocid1.image.oc1..aaaaaaaano7btfbh7cvbaygka4fehemtsal7f7l2qx6oqvbwua6xnszdvaha"
 # Use HPC image Oracle Linux 8.8 with OCA for instances connected to Cluster Network
-#sc_cn_image              = "ocid1.image.oc1..aaaaaaaa2irxaj3eqti6nlggadyo2avsinc6cscxrphsldiuqebcaljlqomq"
+#comp_image              = "ocid1.image.oc1..aaaaaaaa2irxaj3eqti6nlggadyo2avsinc6cscxrphsldiuqebcaljlqomq"
 # Use HPC image Oracle Linux 8.9 with OCA for instances connected to Cluster Network
-#sc_cn_image              = "ocid1.image.oc1..aaaaaaaaxiqlqer2ycd7hgto7in7raojq7v5kud6wlakmm7u7q64ai352tzq"
+comp_image              = "ocid1.image.oc1..aaaaaaaaxiqlqer2ycd7hgto7in7raojq7v5kud6wlakmm7u7q64ai352tzq"
 # Use GPU HPC image Oracle Linux 7.9 CUDA 12.4 with OCA for instances connected to Cluster Network
-#sc_cn_image              = "ocid1.image.oc1..aaaaaaaacvmchv5h7zp54vyntetzkia3hrtr5tyz7j6oiairdfjw3rutgb3q"
+#comp_image              = "ocid1.image.oc1..aaaaaaaacvmchv5h7zp54vyntetzkia3hrtr5tyz7j6oiairdfjw3rutgb3q"
 # Use GPU HPC image Oracle Linux 8.8 CUDA 12.2 with OCA for instances connected to Cluster Network
-#sc_cn_image              = "ocid1.image.oc1..aaaaaaaaeka3qe2v5ucxztilltohgmsyr63s3cd55uidtve4mtietoafopeq"
+#comp_image              = "ocid1.image.oc1..aaaaaaaaeka3qe2v5ucxztilltohgmsyr63s3cd55uidtve4mtietoafopeq"
 # Use GPU HPC image Oracle Linux 8.9 CUDA 12.4 with OCA for instances connected to Cluster Network
-#sc_cn_image              = "ocid1.image.oc1..aaaaaaaa2uaq7zbntzrc5hwoyytmpifjmrjhcfgbotyb5gbfq4cnro46cn3q"
-#sc_cn_boot_vol_size      = 100
+#comp_image              = "ocid1.image.oc1..aaaaaaaa2uaq7zbntzrc5hwoyytmpifjmrjhcfgbotyb5gbfq4cnro46cn3q"
+comp_boot_vol_size      = 100
 # cloud-init config file for HPC shape
-#sc_cn_cloud_config       = "cloud-init_cnhpc.cfg"
+comp_cloud_config       = "cloud-init_cnhpc.cfg"
 # cloud-init config file for GPU shape
-#sc_cn_cloud_config       = "cloud-init_cngpu.cfg"
-#sc_cn_nps_x9             = "NPS2"
-#sc_cn_nps_gpu40          = "NPS4"
-#sc_cn_nps_gpu80          = "NPS4"
-#sc_cn_smt                = false
+#comp_cloud_config       = "cloud-init_cngpu.cfg"
+comp_nps_x9             = "NPS1"
+#comp_nps_gpu40          = "NPS4"
+#comp_nps_gpu80          = "NPS4"
+comp_smt                = true
+#cn_display_name       = "xxxx"
+cn_node_count         = 2
 
 vcn_params               = {
   display_name           = "vcn"

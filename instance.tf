@@ -4,9 +4,9 @@ resource "tls_private_key" "ssh" {
 }
 
 resource "oci_core_instance" "bastion" {
-  compartment_id            = var.sc_compartment_ocid
+  compartment_id            = var.compartment_ocid
   display_name              = var.inst_params_bast.display_name
-  availability_domain       = var.sc_ad
+  availability_domain       = var.ad
   shape                     = var.inst_params_bast.shape
   shape_config {
     ocpus                   = var.inst_params_bast.ocpus
@@ -17,12 +17,12 @@ resource "oci_core_instance" "bastion" {
     assign_public_ip        = true
   }
   source_details {
-    source_id               = var.sc_cn_image
+    source_id               = var.comp_image
     source_type             = "image"
     boot_volume_size_in_gbs = var.inst_params_bast.boot_vol_size
   }
   metadata                  = {
-    ssh_authorized_keys     = "${var.sc_ssh_key}\n${tls_private_key.ssh.public_key_openssh}"
+    ssh_authorized_keys     = "${var.ssh_key}\n${tls_private_key.ssh.public_key_openssh}"
     user_data               = "${base64encode(file("./user_data/cloud-init_bast.cfg"))}"
   }
   preserve_boot_volume      = false
