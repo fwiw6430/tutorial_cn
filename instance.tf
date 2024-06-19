@@ -13,7 +13,7 @@ resource "oci_core_instance" "bastion" {
     memory_in_gbs           = var.inst_params_bast.memory_in_gbs
   }
   create_vnic_details {
-    subnet_id               = oci_core_subnet.sub["public"].id
+    subnet_id               = var.exist_vcn ? var.public_ocid : oci_core_subnet.public[0].id
     assign_public_ip        = true
   }
   source_details {

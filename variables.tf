@@ -1,62 +1,3 @@
-variable "vcn_params" {
-  description          = "VCN Parameters: vcn_cidr, display_name, dns_label"
-  type                 = map(string)
-}
-variable "igw_display_name" {
-  description          = "Internet Gateway display name"
-  type                 = string
-}
-variable "ngw_display_name" {
-  description          = "NAT Gateway display name"
-  type                 = string
-}
-variable "subnet_params" {
-  description          = "Subnet Parameters"
-  type = map(object({
-    display_name       = string
-    cidr_block         = string
-    dns_label          = string
-    is_subnet_private  = bool
-    sl_name            = string
-    rt_name            = string
-  }))
-}
-variable "sl_params" {
-  description          = "Security List Params"
-  type = map(object({
-    display_name       = string
-    ingress_rules      = list(object({
-      stateless        = string
-      protocol         = string
-      source           = string
-      tcp_options      = list(object({
-        min            = number
-        max            = number
-      }))
-      udp_options      = list(object({
-        min            = number
-        max            = number
-      }))
-    }))
-    egress_rules       = list(object({
-      stateless        = string
-      protocol         = string
-      destination      = string
-    }))
-  }))
-}
-variable "rt_params" {
-  description          = "Route Table Params"
-  type                 = map(object({
-    display_name       = string
-    rt_rules = list(object({
-      description      = string
-      destination      = string
-      destination_type = string
-      target_is_igw    = bool
-    }))
-  }))
-}
 variable "user_name" { 
   description          = "User name to be used to access instances via SSH"
   type                 = string
@@ -76,6 +17,25 @@ variable "ad" {
 variable "ssh_key" {
   description          = "SSH public key to login bastion"
   type                 = string
+}
+variable "exist_vcn" {
+  description          = "Deploy HPC/GPU cluster on existing VCN"
+  type                 = bool
+}
+variable "vcn_ocid" { 
+  description          = "Pre-exsisting VCN OCID for HPC/GPU cluster to be deployed in" 
+  type                 = string
+  default              = ""
+}
+variable "public_ocid" { 
+  description          = "Pre-exsisting public subnet OCID for HPC/GPU cluster to be deployed in" 
+  type                 = string
+  default              = ""
+}
+variable "private_ocid" { 
+  description          = "Pre-exsisting private subnet OCID for HPC/GPU cluster to be deployed in" 
+  type                 = string
+  default              = ""
 }
 variable "cn_display_name" { 
   description          = "Cluster display name postfix"
