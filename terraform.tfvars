@@ -41,3 +41,5 @@ inst_params_bast   = {
   memory_in_gbs    = 16
   boot_vol_size    = 100
 }
+
+cn_timeout         = "30m"

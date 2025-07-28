@@ -6,6 +6,10 @@ variable "inst_params_bast" {
   description          = "Instance Parameters for bastion"
   type                 = map(string)
 }
+variable "cn_timeout" {
+  description          = "CN creation timeout setting (minutes)"
+  type                 = string
+}
 variable "compartment_ocid" {
   description          = "Compartment OCID where resources reside"
   type                 = string
