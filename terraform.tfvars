@@ -13,7 +13,9 @@ comp_shape         = "BM.Optimized3.36"
 # Use HPC image Oracle Linux 8.8 with OCA for instances connected to Cluster Network
 #comp_image         = "ocid1.image.oc1..aaaaaaaa2irxaj3eqti6nlggadyo2avsinc6cscxrphsldiuqebcaljlqomq"
 # Use HPC image Oracle Linux 8.9 with OCA for instances connected to Cluster Network
-comp_image         = "ocid1.image.oc1..aaaaaaaaxiqlqer2ycd7hgto7in7raojq7v5kud6wlakmm7u7q64ai352tzq"
+#comp_image         = "ocid1.image.oc1..aaaaaaaaxiqlqer2ycd7hgto7in7raojq7v5kud6wlakmm7u7q64ai352tzq"
+# Use HPC image Oracle Linux 8.10 with OCA for instances connected to Cluster Network
+#comp_image         = "ocid1.image.oc1..aaaaaaaa6nrrkywosaxdd4kur5uttrfgut5l5em73rcv4em5senqtm6fogjq"
 # Use GPU HPC image Oracle Linux 7.9 No.8
 #comp_image         = "ocid1.image.oc1..aaaaaaaa42ozstmmllgevxjvcbompvj6632lwlsigaudh26os7rsmfbcoilq"
 # Use GPU HPC image Oracle Linux 8.8 No.9
