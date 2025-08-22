@@ -31,7 +31,7 @@ comp_boot_vol_size = 100
 #comp_nps_x9        = "NPS1"
 #comp_nps_gpu40     = "NPS4"
 #comp_nps_gpu80     = "NPS4"
-comp_smt           = true
+#comp_smt           = true
 #cn_display_name    = "xxxx"
 cn_node_count      = 2
 

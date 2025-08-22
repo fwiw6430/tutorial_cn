@@ -7,7 +7,7 @@ resource "oci_core_instance_configuration" "cn_config_none5" {
     instance_type               = "compute"
     launch_details {
       availability_domain       = var.ad
-       compartment_id           = var.compartment_ocid
+        compartment_id           = var.compartment_ocid
       metadata                  = { 
         ssh_authorized_keys     = "${tls_private_key.ssh.public_key_openssh}"
         user_data               = "${base64encode(file("./user_data/${var.comp_cloud_config}"))}"
