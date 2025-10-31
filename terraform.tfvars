@@ -9,14 +9,10 @@ exist_vcn          = false
 #comp_shape         = "BM.HPC.E5.144"
 #comp_shape         = "BM.GPU4.8"
 #comp_shape         = "BM.GPU.A100-v2.8"
-# Use HPC image Oracle Linux 7.9 with OCA for instances connected to Cluster Network
-#comp_image         = "ocid1.image.oc1..aaaaaaaano7btfbh7cvbaygka4fehemtsal7f7l2qx6oqvbwua6xnszdvaha"
-# Use HPC image Oracle Linux 8.8 with OCA for instances connected to Cluster Network
-#comp_image         = "ocid1.image.oc1..aaaaaaaa2irxaj3eqti6nlggadyo2avsinc6cscxrphsldiuqebcaljlqomq"
-# Use HPC image Oracle Linux 8.9 with OCA for instances connected to Cluster Network
-#comp_image         = "ocid1.image.oc1..aaaaaaaaxiqlqer2ycd7hgto7in7raojq7v5kud6wlakmm7u7q64ai352tzq"
 # Use HPC image Oracle Linux 8.10 with OCA for instances connected to Cluster Network
 #comp_image         = "ocid1.image.oc1..aaaaaaaa45plxi2fuhmbze63ynbs3xfigb2iroqpbqxh5qbauw3pbh66ddvq"
+# Use HPC image Oracle Linux 9.5 with OCA for instances connected to Cluster Network
+#comp_image         = "ocid1.image.oc1..aaaaaaaaxtobh657yix7kj2zbbuzhwzgvlonqjhpqa23ixdlq2dwipeelxsa"
 # Use GPU HPC image Oracle Linux 7.9 No.8
 #comp_image         = "ocid1.image.oc1..aaaaaaaa42ozstmmllgevxjvcbompvj6632lwlsigaudh26os7rsmfbcoilq"
 # Use GPU HPC image Oracle Linux 8.8 No.9
