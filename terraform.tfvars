@@ -9,16 +9,14 @@ exist_vcn          = false
 #comp_shape         = "BM.HPC.E5.144"
 #comp_shape         = "BM.GPU4.8"
 #comp_shape         = "BM.GPU.A100-v2.8"
-# Use HPC image Oracle Linux 8.10 with OCA for instances connected to Cluster Network
+# Use HPC cluster networking image No. 12 (Oracle Linux 8.10)
 #comp_image         = "ocid1.image.oc1..aaaaaaaa45plxi2fuhmbze63ynbs3xfigb2iroqpbqxh5qbauw3pbh66ddvq"
-# Use HPC image Oracle Linux 9.5 with OCA for instances connected to Cluster Network
+# Use HPC cluster networking image No. 13 (Oracle Linux 9.5)
 #comp_image         = "ocid1.image.oc1..aaaaaaaaxtobh657yix7kj2zbbuzhwzgvlonqjhpqa23ixdlq2dwipeelxsa"
-# Use GPU HPC image Oracle Linux 7.9 No.8
-#comp_image         = "ocid1.image.oc1..aaaaaaaa42ozstmmllgevxjvcbompvj6632lwlsigaudh26os7rsmfbcoilq"
-# Use GPU HPC image Oracle Linux 8.8 No.9
-#comp_image         = "ocid1.image.oc1..aaaaaaaaeka3qe2v5ucxztilltohgmsyr63s3cd55uidtve4mtietoafopeq"
-# Use GPU HPC image Oracle Linux 8.9 No.7
-#comp_image         = "ocid1.image.oc1..aaaaaaaag36bbqszitkjcnnuauf3tiu3dg6bg2q7goj2uaxbbgnszan66fna"
+# Use GPU cluster networking image No. 14 (Oracle Linux 8.10)
+#comp_image         = "ocid1.image.oc1..aaaaaaaas3btftybuhx6gm4o7t2t4bs776pn5dcpk4kgmtbzvynzjkhxoi2q"
+# Use GPU cluster networking image No. 15 (Oracle Linux 9.5)
+#comp_image         = "ocid1.image.oc1..aaaaaaaaevo5a2g6zd524mlu5aopkzxem6farzeilzqwcaax6nnpaflr2ipq"
 comp_boot_vol_size = 100
 # cloud-init config file for HPC shape
 #comp_cloud_config  = "cloud-init_cnhpc.cfg"
