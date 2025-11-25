@@ -19,7 +19,8 @@ resource "oci_core_instance" "bastion" {
   source_details {
     source_id               = var.comp_image
     source_type             = "image"
-    boot_volume_size_in_gbs = var.inst_params_bast.boot_vol_size
+#    boot_volume_size_in_gbs = var.inst_params_bast.boot_vol_size
+    boot_volume_size_in_gbs = var.comp_boot_vol_size
   }
   metadata                  = {
     ssh_authorized_keys     = "${var.ssh_key}\n${tls_private_key.ssh.public_key_openssh}"
