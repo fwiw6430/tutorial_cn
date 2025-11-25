@@ -55,7 +55,7 @@ resource "oci_core_subnet" "private" {
   compartment_id             = var.compartment_ocid
   vcn_id                     = oci_core_virtual_network.vcn[0].id
   display_name               = "private"
-  cidr_block                 = "10.0.2.0/24"
+  cidr_block                 = "10.0.3.0/24"
   dns_label                  = "private"
   prohibit_public_ip_on_vnic = true
   security_list_ids          = [oci_core_security_list.private[0].id]
